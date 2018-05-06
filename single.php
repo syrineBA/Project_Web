@@ -1,75 +1,32 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php include("App/Global-scripts/init.php"); ?>
 <!DOCTYPE php>
 <php>
-<head>
-<title>Cookery A Food Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/php; charset=utf-8" />
-<meta name="keywords" content="Cookery Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!---->
-<link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
-<link href="css/styles.css" rel="stylesheet">
-<!-- animation-effect -->
-<link href="css/animate.min.css" rel="stylesheet"> 
-<script src="js/wow.min.js"></script>
-<script>
- new WOW().init();
-</script>
-<!-- //animation-effect -->
+    <head>
+        <title>Cookery A Food Category Flat Bootstrap Responsive Website Template | Events :: w3layouts</title>
+        <?php include("App/Views/Imports.html"); ?>
 
-</head>
-<body>
-<div class="header head">
-	<div class="container">
-		<div class="logo animated wow pulse" data-wow-duration="1000ms" data-wow-delay="500ms">
-			<h1><a href="index.php"><span>C</span><img src="images/oo.png" alt=""><img src="images/oo.png" alt="">kery</a></h1>
-		</div>
-		<div class="nav-icon">		
-			<a href="#" class="navicon"></a>
-				<div class="toggle">
-					<ul class="toggle-menu">
-						<li><a  href="index.php">Home</a></li>
-						<li><a  href="menufr.php">Recette Française</a></li>
-						<li><a  href="menuit.php">Recette Italienne</a></li>
-						<li><a  href="menutn.php">Recette Tunisienne</a></li>
-						<li><a   href="blog.php">Blog</a></li>
-						<li><a  href="contact.php">Contact</a></li>
-					</ul>
-				</div>
-			<script>
-			$('.navicon').on('click', function (e) {
-			  e.preventDefault();
-			  $(this).toggleClass('navicon--active');
-			  $('.toggle').toggleClass('toggle--active');
-			});
-			</script>
-		</div>
-	<div class="clearfix"></div>
-	</div>
-	<!-- start search-->	
-		
-</div>
+    </head>
+    <body>
+    <?php include("App/Views/NavBar.php"); ?>
+    <!--content-->
 <!--content-->
 <div class="blog">
 	<div class="container">
-		
+
 		<div class="col-md-9 ">
-		<!--content-->
+
+            <?php
+            $pid=intval($_GET['id']);
+            //echo($pid);
+            $sql = "SELECT * from `liste recettes` WHERE id=$pid ";
+            $query = $conn->prepare($sql);
+            $query->execute();
+            $results=$query->fetchAll(PDO::FETCH_OBJ);
+            $cnt=1;
+            if($query->rowCount() > 0)
+            {
+            foreach($results as $result) {	?>
+
 <div class="single">
 	
 		<div class="single-top">
@@ -81,10 +38,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="#"><i class="glyphicon glyphicon-comment"> </i>5 Comment</a></li>
 							<li><a href="#"><i class="glyphicon glyphicon-share"> </i>Share</a></li>
 						</ul>
-						<p class="wow fadeInLeft animated" data-wow-delay=".5s">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error.
-						<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></p>
+                    <p> description de la recette
+                        <br>
+                        <?php echo htmlentities($result->etapes);?>
+                    </p>
 				</div>
 		</div>
 		<div class="comment">
@@ -97,7 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							    <div class="media-left">
 							        <a href="#">
-							        	<img src="images/si1.jpg" alt="">
+							        	<img src="images/<?php echo htmlentities($result->image);?>" alt="">
 							        </a>
 							     </div>
 							    <div class="media-body">
@@ -225,7 +182,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="index.php">Home</a></li>
 						<li><a  href="menu.php">Menu</a></li>
 						<li><a  href="blog.php">Blog</a></li>
-						<li><a  href="events.php">Events</a></li>
+						<li><a  href="recette.php">Events</a></li>
 						<li><a  href="contact.php">Contact</a></li>
 					</ul>					
 						<span>There are many variations of passages</span>
@@ -250,6 +207,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>		
 	<!--//footer-->
+    <?php }} ?>
 
 </body>
 </php>

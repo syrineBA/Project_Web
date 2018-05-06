@@ -7,7 +7,7 @@
         <?php include("App/Views/Imports.html"); ?>
     </head>
     <body>
-    <?php include("App/Views/NavBar.html"); ?>
+    <?php include("App/Views/NavBar.php"); ?>
 
     <!--content-->
     <div class="menu">

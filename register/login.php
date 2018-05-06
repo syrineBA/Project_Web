@@ -8,31 +8,58 @@
         <?php include("Views/Imports.html"); ?>
     </head>
     <body>
-    <?php include("Views/NavBar.html");
+    <?php include("Views/NavBar.php");
 
     require('db.php');
 	session_start();
     // If form submitted, insert values into the database.
     if (isset($_POST['username'])){
-		
+
+
 		$username = stripslashes($_REQUEST['username']); // removes backslashes
 		$username = mysqli_real_escape_string($con,$username); //escapes special characters in a string
 		$password = stripslashes($_REQUEST['password']);
 		$password = mysqli_real_escape_string($con,$password);
-		
 	//Checking is user existing in the database or not
         $query = "SELECT * FROM `users` WHERE username='$username' and password='".md5($password)."'";
-		$result = mysqli_query($con,$query) or die(mysql_error());
+        $result = mysqli_query($con,$query) or die(mysql_error());
 		$rows = mysqli_num_rows($result);
         if($rows==1){
 			$_SESSION['username'] = $username;
-            echo "<div class='form'><h3>You are logged successfully</h3><br/>Click here to <a href='login.php'>Login</a></div>";
-            echo "<div class='form'><h3>If you want to see your profile  <a href='../profile.php'>profile</a></div>";
+			$image = $rows['image'];
 
 
-            header("Location: ../index.php"); // Redirect user to index.php
+
+
+    echo"<div class='content' id='content-down'>
+	<div class='content-top-top'>
+<div class='container'>
+			<div class='content-top'>
+				<div class='col-md-4 content-left animated wow fadeInLeft' data-wow-duration='1000ms' data-wow-delay='500ms'>
+					<h3>Welcome </h3>
+					<label><i class='glyphicon glyphicon-menu-up'></i></label>
+					<span>Vous êtes connecté avec succès</span>
+				</div>
+				<img src= '../images/oo.png' alt=''>
+					<div class='form'><h3> Si vous voulez voir votre profile cliquez sur : <a href='../profile.php'>profile</a></div>
+				<div class='clearfix'> </div>
+			</div></div></div>";
+
+    header("Location: ../index.php"); // Redirecting To Home Page
+
             }else{
-				echo "<div class='form'><h3>Username/password is incorrect.</h3><br/>Click here to <a href='login.php'>Login</a></div>";
+				echo"<div class='content' id='content-down'>
+                    	<div class='content-top-top'>
+                             <div class='container'>
+	                    		<div class='content-top'>
+	                       			<div class='col-md-4 content-left animated wow fadeInLeft' data-wow-duration='1000ms' data-wow-delay='500ms'>
+			                    		<h3>Ooops ! </h3>
+		                    			<label><i class='glyphicon glyphicon-menu-up'></i></label>
+		                    			<span>Vous n'êtes pas connecté </span>
+				                    </div>
+					                <div class='form'><h3> Veuillez  cliquez sur : <a href='login.php'>login</a></div>
+				                    <div class='clearfix'> </div>
+			            </div></div></div>\"";
 				}
     }else{
 ?>

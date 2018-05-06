@@ -1,7 +1,5 @@
 <?php
-include("App/Global-scripts/init_register.php");
-
-
+include ('session.php');
 
 $username =$_GET['username'];
 
@@ -13,17 +11,20 @@ if (!$result)
 		}
 $username=$test['username'];
 $email=$test['email'];
+$image=$test['image'];
 
 if(isset($_POST['save']))
 {
 $username_save=$_POST['username'];
 $email_save=$_POST['email'];
+$image_save=$_POST['image'];
 
 
-	mysql_query("UPDATE users SET username ='$username_save', email ='$email_save' WHERE username = '$username'")
-				or die(mysql_error()); 
-	echo "Saved!";
-    echo "<div class='form'><h3>Successefully saved</h3><br/>Click here to <a href='index.php?'>index</a></div>";
+	mysql_query("UPDATE users SET username ='$username_save', email ='$email_save' ,image='$image_save 'WHERE username = '$username'")
+				or die(mysql_error());
+	$_SESSION['username']=$username_save;
+    header("Location: profile.php"); // Redirecting To Home Page
+
 }else {
 
 ?>
@@ -32,14 +33,12 @@ $email_save=$_POST['email'];
 <html>
 
 	<head>
-		<title>Welcome  To Biobook - Sign up, Log in, Post </title>
 		<link rel="stylesheet" type="text/css" href="css/edit_profile.css">
         <?php include("App/Views/Imports.html"); ?>
 
     </head>
 
 <body>
-<?php include ('session.php');?>
 
 <?php include("App/Views/NavBar.html"); ?>
 
@@ -47,32 +46,52 @@ $email_save=$_POST['email'];
 <div class="container">
 <div id="right-nav">
     <br>
-			<h1>Edit Info</h1>
-	
-		<div>
+			<h1>Editez vos Infos</h1>
+
+    <div>
 		
 		<fieldset class="-------------">
 			<table cellpadding="5" cellspacing="5">
 
-<form method="post" >
-				<tr>
-					<td><label>User name</label></td>
-					<td><label>Email</label></td>
-				</tr>
-				<tr>
-					<td><input type="text" class="form-control" name="username" value="<?php echo $username; ?>" placeholder="Enter your name....."  title="Enter your name" required /></td>
-					<td><input type="text" class="form-control" name="email" value="<?php echo $email; ?>" placeholder="Enter your email....."  title="Enter your email" required /></td>
 
-                </tr><br><br>
+                <form method="POST">
+                    <div class="grid-contact">
 
-			</table>
+                        <div class="col-md-6 contact-grid">
+                            <p class="your-para">Nom de l'utilisateur :</p>
+                            <input type="text" class="form-control" name="username" value="<?php echo $username; ?>" placeholder="Enter your name....."  title="Enter your name" required />
+                        </div>
+
+                        <div class="clearfix"> </div>
+                    </div>
+
+
+                    <div class="grid-contact">
+
+                        <div class="col-md-6 contact-grid">
+                            <p class="your-para">Email</p>
+                            <input type="text" class="form-control" name="email" value="<?php echo $email; ?>" placeholder="Enter your email....."  title="Enter your email" required />
+                        </div>
+                        <div class="clearfix"> </div>
+
+                        <div class="col-md-6 contact-grid">
+                            <p class="your-para">Image</p>
+                            <input type="file" name="image" />
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="send">
+                        <button type="submit" class="btn btn-primary" name="save" class="">Save</button>
+                    </div>
+                </form>
+
+
 		</fieldset>
 <br />
 
-<br />		
-		<button type="submit" class="btn btn-primary" name="save" class="">Save</button>
+<br />
 
-		
+
 		</div>
 		
 		</div>

@@ -7,7 +7,7 @@
         <?php include("App/Views/Imports.html"); ?>
     </head>
     <body>
-    <?php include("App/Views/NavBar.html"); ?>
+    <?php include("App/Views/NavBar.php"); ?>
 
     <!--content-->
 
@@ -89,8 +89,8 @@ $pp = $_SESSION["pays"];
                     <form id ="subject" methode="post" action="subjects.php?pays=<?php echo $_SESSION["pays"]?>&subjects=<?php  echo $_SESSION["subject"]?>">
                         <div class="single-grid wow fadeInLeft animated" data-wow-delay=".5s">
 
-                            <input type="text" class="form-control" placeholder="Comment" name="commentaire" id="commentaire" />
-                            <input  type= "submit" value="Add Subject">
+                            <input type="text" class="form-control" placeholder="Commentaire" name="commentaire" id="commentaire" />
+                            <input  type= "submit" value="Ajouter un Subjet">
                         </div>
 
                     </form>

@@ -13,12 +13,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
  <div class="header">
-	<?php include("App/Views/NavBar-Menu.html"); ?>
+
+     <?php include("App/Views/NavBar.php"); ?>
+
 	<!-- start search-->	
 		<div class="banner">
-			<p class="animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">Sed ut perspiciatis unde omnis iste natus.</p>
+			<p class="animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">la cuisine est la base du véritable BONHEUR </p>
 			<label></label>
-			<h4 class="animated wow fadeInTop" data-wow-duration="1000ms" data-wow-delay="500ms">Hello And Welcome To Food</h4>
+			<h4 class="animated wow fadeInTop" data-wow-duration="1000ms" data-wow-delay="500ms">Vous etes les bienvenu</h4>
 			<a class="scroll down" href="#content-down"><img src="images/down.png" alt=""></a>
 		</div>
 </div>
@@ -30,14 +32,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-4 content-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
 					<h3>Nos spécialités</h3>
 					<label><i class="glyphicon glyphicon-menu-up"></i></label>
-					<span>There are many variations</span>
+					<span>Ils y a beaucoup de variations</span>
 				</div>
 				<div class="col-md-8 content-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                        in some form, by injected humour , or randomised words which don't look even slightly believable.There
-                        are many variations by injected humour. There are many variations of passages of Lorem Ipsum available.
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                        in some form by injected humour , or randomised words</p>
+					<p>Bienvenue sur COOKING.org !
+                        Pour mieux vous connaître et améliorer votre expérience, nous utilisons différents cookies :
+                        des cookies techniques, des cookies posés par les réseaux sociaux  et des cookies publicitaires (posés par nos partenaires).
+                        La poursuite de votre visite sur notre site vaut pour consentement de notre politique de cookies. Un paramétrage de
+                        ces cookies est disponible sur cette page.
+                    </p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -50,62 +53,70 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  <div class="top">
 						<div class="front face"></div>
 						<div class="back face">
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+						<p>la cuisine francaise fait référence à divers styles gastronomiques dérivés de la traition francaise </p>
 						</div>
 					  </div>
 					  <div class="bottom"></div>
 					</div>
 					  <a href="menu.php?pays=france" > <input type="button" class="btn btn-info" value="voir plus"> </a>
 				</div>
+
 				<div class="col-md-4 food-grid animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
 					<div class=" hover-fold">
 					  <h4>gastronomie italienne</h4>
 					  <div class="top">
 						<div class="front face front1"></div>
 						<div class="back face">
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+						<p>la cuisine italienne est tres variée grace aux apports des traditions culturelles differentes,grecque , étrusque, romaine , arabe ..</p>
 						</div>
 					  </div>
 					  <div class="bottom bottom1"></div>
 					</div>
 					<a href="menu.php?pays=italie"> <input type="button" class="btn btn-info" value="voir plus"> </a>
 				</div>
+
 				<div class="col-md-4 food-grid animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
 					<div class=" hover-fold">
 					  <h4>gastronomie tunisienne</h4>
 					  <div class="top">
 						<div class="front face front2"></div>
 						<div class="back face">
-						<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+						<p>La cuisine tunisienne, est une cuisine méditerranéenne  et qui reflète les differnents héritages culturels berbères, arabes, juifs, turcs .. </p>
 						</div>
 					  </div>
 					  <div class="bottom bottom2"></div>
 					</div>
 					<a href="menu.php?pays=tunisie" > <input type="button" class="btn btn-info" value="voir plus"> </a>
 				</div>
+
+
 				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
+
 
 <!--news-->
 	<div class="content-top-top">
 		<div class="container">
 			<div class="content-top">
 				<div class="col-md-4 content-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
-					<h3>News</h3>
+					<h3>Actualités</h3>
 					<label><i class="glyphicon glyphicon-menu-up"></i></label>
-					<span>There are many variations</span>
+					<span>La quiche fête le printemps !</span>
 				</div>
 				<div class="col-md-8 content-right animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour , or randomised words which don't look even slightly believable.There are many variations by injected humour. There are many variations of passages of Lorem Ipsum available.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form by injected humour , or randomised words</p>
+					<p>Elle, qui séduit grands et petits sans distinction, enfile aujourd’hui son costume printanier mettant au goût du jour ses saveurs fleuries irrésistibles. Qui saura lui résister ?</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="news-bottom">
 				<div class="news-bot">
+
+
+
 					<div class="col-md-6 news-bottom1 animated wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
-						<a href="single.php">
+						<a href="recette_index.php">
 							<div class="content-item">
 								<div class="overlay"></div>
 								<div class=" news-bottom2">
@@ -114,13 +125,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<li><span><i class="glyphicon glyphicon-comment"> </i>5 Comment</span><b>/</b></li>
 										<li><span><i class="glyphicon glyphicon-share"> </i>Share</span></li>
 									</ul>
-									<p>There are many variations of passages of Lorem Ipsum available</p>
+									<p>Le canard sort de l’ordinaire</p>
 								</div>
 							</div>
 						</a>
 					</div>
+
+
 					<div class="col-md-6 news-bottom1 animated wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="500ms">
-						<a href="single.php">
+						<a href="recette_index.php">
 							<div class="content-item content-item1">
 								<div class="overlay"></div>
 								<div class=" news-bottom2">
@@ -129,16 +142,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><span><i class="glyphicon glyphicon-comment"> </i>5 Comment</span><b>/</b></li>
 											<li><span><i class="glyphicon glyphicon-share"> </i>Share</span></li>
 										</ul>
-									<p>There are many variations of passages of Lorem Ipsum available</p>
+									<p>Taboulé de quinoa façon buddha bowl</p>
 								</div>
 							</div>
 						</a>
 					</div>
 					<div class="clearfix"> </div>
+
 				</div>
 				<div class="news-bot">
 					<div class="col-md-6 news-bottom1">
-						<a href="single.php">
+						<a href="recette_index.php">
 							<div class="content-item content-item2 animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
 								<div class="overlay"></div>
 								<div class=" news-bottom2">
@@ -147,13 +161,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><span><i class="glyphicon glyphicon-comment"> </i>5 Comment</span><b>/</b></li>
 											<li><span><i class="glyphicon glyphicon-share"> </i>Share</span></li>
 										</ul>
-									<p>There are many variations of passages of Lorem Ipsum available</p>
+									<p>Pie pops à la fraise</p>
 								</div>
 							</div>
 						</a>
 					</div>
+
 					<div class="col-md-6 news-bottom1 animated wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
-						<a href="single.php">
+						<a href="recette_index.php">
 							<div class="content-item content-item3">
 								<div class="overlay"></div>
 								<div class=" news-bottom2">
@@ -162,7 +177,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li><span><i class="glyphicon glyphicon-comment"> </i>5 Comment</span><b>/</b></li>
 											<li><span><i class="glyphicon glyphicon-share"> </i>Share</span></li>
 										</ul>
-									<p>There are many variations of passages of Lorem Ipsum available</p>
+									<p>Salades pleines de fraîcheur</p>
 								</div>
 							</div>
 						</a>

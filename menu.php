@@ -7,9 +7,11 @@
 <?php include("App/Views/Imports.html"); ?>
 </head>
 <body>
-<?php include("App/Views/NavBar.html"); ?>
+<?php include("App/Views/NavBar.php"); ?>
 <?php 
-$p=$_GET['pays'];?>		
+$p=$_GET['pays'];
+$_SESSION['pays']=$_GET['pays'];?>
+
 <!--content-->
 	<div class="menu">
 		<div class="container">
@@ -19,8 +21,8 @@ $p=$_GET['pays'];?>
 					<label><i class="glyphicon glyphicon-menu-up"></i></label>
 					<h2>Categories</h2>
 					<ul class="popular">
-						<li><a href="#"><i class="glyphicon glyphicon-menu-right"> </i>Breakfast</a></li>
-						<li><a href="#"><i class="glyphicon glyphicon-menu-right"> </i>Lunch</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-menu-right"> </i>Detit dejeuner</a></li>
+						<li><a href="#"><i class="glyphicon glyphicon-menu-right"> </i>Dejeuner</a></li>
 						<li><a href="#"><i class="glyphicon glyphicon-menu-right"> </i>Dinner</a></li>
 						<li><a href="#"><i class="glyphicon glyphicon-menu-right"> </i>Dessert</a></li>
                         <li><a href="#"></i></a></li>
@@ -33,7 +35,6 @@ $p=$_GET['pays'];?>
 				</div>
 
 			<div id="results-container">
-
 			</div>
 
 			</div>
@@ -54,7 +55,9 @@ $p=$_GET['pays'];?>
 
 		 	 success: function(result){
 		 	 	if(result.msg == "empty")
-		 	 		$('#results-container').html('<div class="alert alert-danger col-md-4 menu-bottom1"><strong>Alert<strong> Aucune Resultat </div>')
+		 	 		$('#results-container').html('<li><a href="menu.php?pays=france"><i class="glyphicon glyphicon-menu-right"> </i>recette francaise</a></li>\n' +
+                        '                        <li><a href="menu.php?pays=tunisie"><i class="glyphicon glyphicon-menu-right"> </i>recette tunisienne</a></li>\n' +
+                        '                        <li><a href="menu.php?pays=italie"><i class="glyphicon glyphicon-menu-right"> </i>recette italienne</a></li>')
 		 	 	else
 		 	 	{
 		 	 			var html = "";
@@ -62,8 +65,8 @@ $p=$_GET['pays'];?>
 		        			
 			        		html += 	'<div class="col-md-4 menu-bottom1">'
 										+'<div class="btm-right">'
-										+'	<a href="events.php?id='+value.id+'">'
-										+'		<img src="'+value.images+'" alt="" class="img-responsive" width="50px" height="50px">'
+										+'	<a href="recette.php?id='+value.id+'">'
+                                +'		<img src="'+value.images+'" alt="" class="img-responsive" width="50px" height="50px">'
 										+'		<div class="captn">'
 										+'			<h4> '+value.nom+'</h4>'
 										+'			<p>'+value.pays+'</p>	'			

@@ -7,7 +7,7 @@
         <?php include("App/Views/Imports.html"); ?>
     </head>
     <body>
-    <?php include("App/Views/NavBar.html"); ?>
+    <?php include("App/Views/NavBar.php"); ?>
 
     <!--content-->
     <div class="menu">
@@ -49,21 +49,21 @@
                                 $result = mysqli_query($con,$query);
 
 
-                                echo "<div class='form'><h3>a Subject is added</h3><br/>Click here to <a href='forum_it.php?pays=italie'>Refresh</a></div>";
+                                echo "<div class='form'><h3>le sujet est ajouté</h3><br/>Cliquez ici <a href='forum_it.php?pays=italie'>Refresh</a></div>";
 
                             }else{
                                 ?>
-                                <form id ="subject" action="App/API/AddSubject.php">
+                                <form id ="subject" >
                                     <div class="single-grid wow fadeInLeft animated" data-wow-delay=".5s">
 
-                                        <input type="text" class="form-control" placeholder="Name of subject" name="nom" id="nom" />
+                                        <input type="text" class="form-control" placeholder="Nom du sujet" name="nom" id="nom" />
 
-                                        <textarea type="text" class="form-control" placeholder="Description of subject" name="description" id="description"></textarea>
+                                        <textarea type="text" class="form-control" placeholder="Description de subjec" name="description" id="description"></textarea>
 
-                                        <p class="your-para">Add pictures to the subjects</p>
+                                        <p class="your-para">Ajouter une image au subjet</p>
                                         <input type="file" name="image" />
 
-                                        <input type="submit" value="Add Subject">
+                                        <input type="submit" value="Ajouter Subjet">
                                     </div>
 
                                 </form>
@@ -95,7 +95,7 @@
                         $.each(result.data, function(index, value){
                             html += '<div class="media wow fadeInLeft animated" data-wow-delay=".5s">'
                                 +' <div class="code-in">'
-                                +' <p class="smith"><a href="#">'+value.nom+' </a> <span>14 June 2018, 20:20</span></p>'
+                                +' <p class="smith"><a href="#">'+value.nom+' </a> <span>14 Juin 2018, 20:20</span></p>'
                                 + '<div class="clearfix"> </div>'
                                 +'</div>'
                                 + '<div class="media-left">'
