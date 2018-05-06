@@ -14,7 +14,7 @@
         <div class="container">
             <div class="menu-top">
                 <div class="col-md-4 menu-left animated wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="500ms">
-                    <h3>Recettes </h3>
+                    <h3>Recetteeeeeeeeeeeeeees </h3>
                     <label><i class="glyphicon glyphicon-menu-up"></i></label>
                     <h2>Categories</h2>
                     <ul class="popular">
